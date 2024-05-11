@@ -17,6 +17,7 @@
     "@shelex/cypress-allure-plugin": "^2.19.4",
     "allure-commandline": "^2.12.1",
     "cypress": "^12.13.0",
+    "cypress-xpath": "^2.0.1",
     "rimraf": "^5.0.6"
   }
 }

@@ -1,16 +1,28 @@
-describe('GATO Home', ()=>{
-  it('Barra de Navegacion', ()=>{
-      cy.log('Visitar Gato')
-      cy.visit('https://www.gato.us/')
+//import { beforeEach } from "mocha"
 
-      cy.log('Existe el logo')
+describe('GATO Header', ()=>{
+
+  beforeEach('Visitar Gato', ()=>{
+    cy.visit('https://www.gato.us/')
+})
+  it('TC#1 | Existe el buscador', ()=>{
+        cy.get('input[type="text"]',{timeout: 15000}).should('exist')
+  })
+
+  it('TC#2 | Existe el logo', ()=>{
       cy.get('.r-88pszg',{timeout: 15000}).should('exist')
+  })
 
-      cy.log('Existe el buscador')
-      cy.get('input[type="text"]',{timeout: 15000}).should('exist')
+  it('TC#3 | Existe botón Ingresar', ()=>{
+    cy.get('div:contains("Ingresar")',{timeout: 15000}).should('exist')
+  })
 
-      //falta localizar botón de Explora y Login
+  it('TC#4 | Existe botón Sube tu juego', ()=>{
+    cy.get('div:contains("Sube tu juego")',{timeout: 15000}).first().should('exist')
+  })
 
-      cy.wait(5000)
+  it('TC#5 | Existe botón Explorar juegos', ()=>{
+    cy.get('div:contains("Explorar juegos")',{timeout: 15000}).first().should('exist')   
+    cy.wait(15000)
   })
 })
